@@ -1,7 +1,7 @@
 {
-  "name": "Consoler",
-  "description": "Consoler Web",
-  "repository": "https://github.com/FarhanMS123/NodeJS-Console",
+  "name": "Tag Event",
+  "description": "Tag Event",
+  "repository": "https://github.com/Mirzasafaraz/moovlbackend",
   "logo": "",
   "keywords": ["node", "net", "heroku"],
   "image": ""

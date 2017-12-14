@@ -1,14 +1,13 @@
 {
-  "name": "Consoler",
-  "version": "0.3.0",
-  "description": "Consoler Web",
+  "name": "Tag Event",
+  "version": "0.0.1",
+  "description": "Tag Event",
   "engines": {
     "node": "8.9.1"
   },
-  "main": "handler.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node handler.js",
-    "console": "node test.js"
+    "start": "node index.js"
   },
   "dependencies": {
   
@@ -19,11 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/FarhanMS123/NodeJS-Console"
+    "url": "https://github.com/Mirzasafaraz/moovlbackend"
   },
   "keywords": [
     "node",
     "heroku"
   ],
-  "license": "MIT"
+  "license": "GNU"
 }

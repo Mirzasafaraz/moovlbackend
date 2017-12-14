@@ -1,1 +1,1 @@
-web: node handler.js
+web: node index.js

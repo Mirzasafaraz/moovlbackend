@@ -12,13 +12,12 @@ setTimeout(function(){
 	}).on("connect", function(){
 		console.log("connected");
 	});
+	c.stdout.on("data", function(dt){
+		dt = dt.toString();
+		s.write(dt);
+		console.log(dt)
+	});
 },1000);
-
-c.stdout.on("data", function(dt){
-	dt = dt.toString();
-	s.write(dt);
-	console.log(dt)
-});
 c.on("exit", function(){
 	global.c = cp.spawn("node", ["console.js"]);
 	setTimeout(function(){

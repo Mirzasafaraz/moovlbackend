@@ -1,0 +1,29 @@
+{
+  "name": "Consoler",
+  "version": "0.3.0",
+  "description": "Consoler Web",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "handler.js",
+  "scripts": {
+    "start": "node handler.js",
+    "console": "node test.js"
+  },
+  "dependencies": {
+  
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FarhanMS123/NodeJS-Console"
+  },
+  "keywords": [
+    "node",
+    "heroku"
+  ],
+  "license": "MIT"
+}

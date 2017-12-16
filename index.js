@@ -1,7 +1,7 @@
 var net = require("net");
 var cp = require("child_process");
-var html = require("./html");
-var njs = require("./njs");
+var html = require("./html.js");
+var njs = require("./njs.js");
 
 var log = []; //[dt[, s], time, type]; type=object[_event]
 

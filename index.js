@@ -2,6 +2,7 @@ var net = require("net");
 var cp = require("child_process");
 var html = require("./html.js");
 var njs = require("./njs.js");
+var ownDB = require("./db/index.js");
 
 var log = []; //[dt[, s], time, type]; type=object[_event]
 

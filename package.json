@@ -1,28 +1,15 @@
 {
-  "name": "Tag Event",
-  "version": "0.0.1",
-  "description": "Tag Event",
-  "engines": {
-    "node": "8.9.1"
-  },
+  "name": "web2",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-  
-  },
-  "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mirzasafaraz/moovlbackend"
-  },
-  "keywords": [
-    "node",
-    "heroku"
-  ],
-  "license": "GNU"
+    "express": "^4.16.2",
+    "multer": "^1.3.0"
+  }
 }

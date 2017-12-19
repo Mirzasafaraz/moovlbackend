@@ -5,7 +5,7 @@ var fs = require("fs");
 var path = require("path");
 
 var app = express();
-app.listen(80);
+app.listen(process.env.PORT);
 
 app.all("/*", bP, function(req,res,next){
 	if(req.originalUrl.slice(0, ("/test")) == "/test"){

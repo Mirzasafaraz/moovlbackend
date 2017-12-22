@@ -1,0 +1,26 @@
+var pg = require("pg");
+
+var db = new pg.Client({
+	connectionString: process.env.DATABASE_URL,
+	ssl: true
+}); 
+
+db.connect();
+
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function doLoop(){
+	rl.question('> ', (ans) => {
+		client.query(ans.toString(), function(err, res){
+			if(err) console.log(err);
+			console.log(res);
+		});
+		doLoop()
+	});
+}
+doLoop();

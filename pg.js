@@ -1,4 +1,4 @@
-var pg = require("pg");
+var pg = require("./node_modules/pg/lib/index.js");
 
 var db = new pg.Client({
 	connectionString: process.env.DATABASE_URL,

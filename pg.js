@@ -16,7 +16,7 @@ const rl = readline.createInterface({
 
 function doLoop(){
 	rl.question('> ', (ans) => {
-		client.query(ans.toString(), function(err, res){
+		db.query(ans.toString(), function(err, res){
 			if(err) console.log(err);
 			console.log(res);
 		});

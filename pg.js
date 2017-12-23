@@ -7,6 +7,7 @@ var db = new pg.Client({
 
 db.connect();
 
+console.log(`connected to ${process.env.DATABASE_URL}`)
 const readline = require('readline');
 
 const rl = readline.createInterface({

@@ -1,15 +1,26 @@
 {
-  "name": "web2",
+  "name": "web_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "WebServer based on NodeJS and ExpressJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "express",
+    "nodejs",
+    "web",
+    "server"
+  ],
+  "author": "FarhanMS123",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "multer": "^1.3.0"
+    "jade": "^1.11.0",
+    "mime": "^2.1.0",
+    "mime-types": "^2.1.17",
+    "multer": "^1.3.0",
+    "ws": "^3.3.3"
   }
 }

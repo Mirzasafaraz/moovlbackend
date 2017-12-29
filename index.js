@@ -1,32 +1,44 @@
-var express = require("express");
-var bP = require("./bodyParse.js");
-var util = require("util");
-var fs = require("fs");
-var path = require("path");
+//basic modules
+	global.util = require("util");
+	global.fs = require("fs");
+	global.path = require("path");
+	global.net = require("net");
+	global.cp = require("child_process");
+	global.http = require("http");
+	global.vm = require("vm");
 
-var app = express();
-app.listen(process.env.PORT);
+//express modules
+	global.express = require("express");
+	global.bodyParser = require('body-parser');
+	global.multer = require('multer');
 
-app.all("/*", bP, function(req,res,next){
-	if(req.originalUrl.slice(0, ("/test")) == "/test"){
-		res.send(util.inspect(req));
-	}else{
-		var p = path.join("public", req.path);
-		if(fs.existsSync(p)){
-			var st = fs.statSync(p);
-			if(st.isDirectory()){
-				var d = fs.readdirSync(p);
-				for(i=0;i<d.length;i++){
-					if(d[i].slice(0, d[i].indexOf(".")) == "index"){
-						p = path.join(p, d[i]);
-						break;
-					}
-				}
-			}
-			console.log([p, fs.readFileSync(p).toString()]);
-			res.send(fs.readFileSync(p).toString());
-		}else{
-			res.send("404 Not Found :(");
-		}
-	}
-});
+//extra modules
+	global.ejs = require("ejs");
+	global.mimeTypes = require("mime-types");
+	global.ws = require("ws"); //winsock
+	global.getBody = require("./getBody.js"); //get data from body request
+	global.autoRes = require("./autoRes.js"); //auto respond for webFile
+	require("./global.js")();
+
+//script begin
+	global.s_exp = express(); //server-express
+	global.s_read = net.createServer();
+	//options
+		if(fs.existsSync("setting.js")) global.opt = require("./setting.js"); //for get setting
+		
+		addMime("njs", "application/x-httpd-njs")
+		addMime("nhtml", "application/x-httpd-nhtml")
+		addMime("ejs", "application/x-httpd-ejs")
+		
+		global.upload = multer().array(); // for parsing multipart/form-data
+		
+		s_exp.set('view engine', 'jade');
+		s_exp.use(bodyParser.json()); // for parsing application/json
+		s_exp.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+	//route script
+		s_exp.all("/*", upload, autoRes);
+
+//listening and another end function
+	s_exp.listen(opt.port || 80);
+	console.log(`listening on ${opt.port || 80}`);

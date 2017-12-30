@@ -30,7 +30,7 @@
 		addMime("nhtml", "application/x-httpd-nhtml")
 		addMime("ejs", "application/x-httpd-ejs")
 		
-		global.upload = multer().array(); // for parsing multipart/form-data
+		global.upload = multer({dest:__dirname + "/"}).any(); // for parsing multipart/form-data
 		
 		s_exp.set('view engine', 'jade');
 		s_exp.use(bodyParser.json()); // for parsing application/json

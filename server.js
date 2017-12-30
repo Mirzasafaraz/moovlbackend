@@ -22,7 +22,6 @@
 
 //script begin
 	global.s_exp = express(); //server-express
-	global.s_read = net.createServer();
 	//options
 		if(fs.existsSync("setting.js")) global.opt = require("./setting.js"); //for get setting
 		

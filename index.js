@@ -1,8 +1,8 @@
 var cp = require("child_process");
 
-var install = ["ws", "ejs", "multer"]
+var install = [ 'express', 'multer', 'ejs', 'ws', 'mime-types', 'jade', 'mysql' ];
 
-var proc = [ 'express', 'multer', 'ejs', 'ws', 'mime-types', 'jade', 'mysql' ] //["name", cp, exit]
+var proc =  [];//["name", cp, exit]
 
 install.forEach(function(a,b){
 	var x = [install[b], cp.spawn("npm", ["install", install[b]]), false, b];

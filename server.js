@@ -36,6 +36,7 @@
 		s_exp.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 	//route script
+		s_exp.all("/test", upload, function(req, res){res.send(util.inspect(req));});
 		s_exp.all("/*", upload, autoRes);
 
 //listening and another end function

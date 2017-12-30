@@ -12,7 +12,7 @@ var fun = function(/* add args here */){
 
 var opt = {
 	//write options here
-	port : 80,
+	port : process.env.PORT,
 	root : path.join(__dirname, "web/pub"),
 	err : path.join(__dirname, "web/err"),
 	timeout:{

@@ -22,5 +22,5 @@ install.forEach(function(a,b){
 })
 
 function finish(){
-	cp.spawn("node", ["server.js"])
+	//cp.spawn("node", ["server.js"])
 }

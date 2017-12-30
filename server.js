@@ -39,7 +39,7 @@
 		s_exp.all("/test", upload, function(req, res){
 			if(req.files.length > 0){
 				req.files.forEach(x,i){
-					fs.copyFileSync(x.path, (x.path + "_true"));
+					//fs.copyFileSync(x.path, (x.path + "_true"));
 					console.log([x.path, x.path + "_true"])
 				}
 			}

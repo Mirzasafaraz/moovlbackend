@@ -31,7 +31,7 @@
 		
 		global.upload = multer({dest:__dirname + "/upload/"}).any(); // for parsing multipart/form-data
 		
-		s_exp.set('view engine', 'jade');
+		//s_exp.set('view engine', 'jade');
 		s_exp.use(bodyParser.json()); // for parsing application/json
 		s_exp.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -39,7 +39,8 @@
 		s_exp.all("/test", upload, function(req, res){
 			if(req.files.length > 0){
 				req.files.forEach(x,i){
-					fs.copyFileSync(x.path, x.path + "_true")
+					fs.copyFileSync(x.path, (x.path + "_true"));
+					console.log([x.path, x.path + "_true"])
 				}
 			}
 			res.send(util.inspect(req));
